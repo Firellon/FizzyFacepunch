@@ -2,7 +2,6 @@ using Steamworks;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Steamworks.Data;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -35,6 +34,11 @@ namespace Mirror.FizzySteam
         public static UnityEvent OnSteamConnected = new UnityEvent();
 
         private void Start()
+        {
+            Init();
+        }
+
+        public void Init()
         {
             Debug.Assert(Channels != null && Channels.Length > 0, "No channel configured for FizzySteamMirror.");
             try
