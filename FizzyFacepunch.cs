@@ -194,6 +194,11 @@ namespace Mirror.FizzySteam
       }
     }
 
+    public override bool ServerSend(List<int> connectionIds, int channelId, ArraySegment<byte> segment)
+    {
+      throw new NotImplementedException();
+    }
+
     public override Uri ServerUri()
     {
       var steamBuilder = new UriBuilder
