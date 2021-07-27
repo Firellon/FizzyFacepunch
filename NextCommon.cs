@@ -16,7 +16,7 @@ public abstract class NextCommon
 
     GCHandle pinnedArray = GCHandle.Alloc(data, GCHandleType.Pinned);
     IntPtr pData = pinnedArray.AddrOfPinnedObject();
-    SendType sendFlag = channelId == Channels.Unreliable ? SendType.Unreliable : SendType.Reliable;
+    SendType sendFlag = channelId == Channels.DefaultUnreliable ? SendType.Unreliable : SendType.Reliable;
     Result res = conn.SendMessage( pData, data.Length, sendFlag);
     if(res != Result.OK)
     {
